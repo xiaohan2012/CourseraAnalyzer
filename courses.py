@@ -1,14 +1,22 @@
 from db import db
+from pprint import pprint
 
+class Course(dict):
+    def __init__(self,data):
+        dict.__init__(self,data)
+
+    def get_instructor(self,data):
+        return self["instructor"]
+    
 class Courses(object):
-    def __init__(self):
-        self.data = db.courses
-
-    def filter_by(self,criteria):
+    @staticmethod
+    def get(criteria):
         print criteria
-        return list(self.data.find(criteria))
+        return map(Course , 
+                   list(db.courses.find(criteria)))
 
 if __name__ == "__main__":
-    cs = Courses()
-    print len(cs.filter_by({"university-ids":{"$all":["stanford"]}}))
+    courses = Courses.get({"university-ids":{"$all":["stanford"]}})
+    print len(courses)
+    pprint(courses[0])
 
