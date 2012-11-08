@@ -1,3 +1,5 @@
+from collections import Counter
+
 from db import db
 from course import Courses
 
@@ -15,11 +17,20 @@ class University(dict):
     def __init__(self,data):
         dict.__init__(self, data)
         self.courses = None
+        self.cats = None
 
     def get_courses(self):
         if not self.courses:
             self.courses = Courses.get({"university-ids":{"$all":[self["short_name"]]}})
         return self.courses
+
+    def get_cats(self):
+        cs = self.get_courses()
+        if not self.cats: 
+            self.cats = Counter(cat["short_name"]  for c in cs for cat in c.get_cats() )
+        return self.cats            
+
+
 
 class Universities(list):
     def __init__(self,data):
@@ -46,3 +57,4 @@ if __name__ == "__main__":
 
     for u in univs[:5]:
         print "%-12s from %10s:%d" %(u["name"] , u["short_name"] , len(u.get_courses()) )
+        print u.get_cats()

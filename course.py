@@ -4,9 +4,16 @@ class Course(dict):
     def __init__(self,data):
         dict.__init__(self,data)
 
-    def get_instructor(self,data):
+    def get_instructor(self):
         return self["instructor"]
-    
+
+    def get_cats(self):
+        "get course categories"
+        return self["categories"]
+
+    def get_univs(self):
+        return self["universities"]
+
 class Courses(list):
     def __init__(self,data):
         list.__init__(self,data)
@@ -26,5 +33,5 @@ if __name__ == "__main__":
     print len(courses)
 
     from pprint import pprint
-    pprint(courses[0]["categories"])
+    pprint(courses[0])
 
