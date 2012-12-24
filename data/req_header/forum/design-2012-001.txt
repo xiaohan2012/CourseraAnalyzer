@@ -1,0 +1,9 @@
+Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Charset:UTF-8,*;q=0.5
+Accept-Encoding:gzip,deflate,sdch
+Accept-Language:en-US,en;q=0.8
+Cache-Control:max-age=0
+Connection:keep-alive
+Cookie:csrf_token=cFihBInqGg3qwmebpcp8; session=IijeBf%2BGosaSrT9t7cnyHbar1oAaOYAc0B0Du304IkbTVl2VicRavOM05JN6Kb9k7vMvvL3XD0fg8m0TJ59eIg%3D%3D%7CRxsjJu3aytnWdBzV9hX54v6eX4h8wFVn9eh9BUV0c4rXzhiKvqbECEQ9vzSRnoaSt4zfhuedDxSa8QqluAFv1w%3D%3D; __204u=5414879252-1355373861244; __utma=158142248.763636180.1342847659.1355378471.1355381701.70; __utmb=158142248.10.10.1355381701; __utmc=158142248; __utmz=158142248.1352982484.59.4.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)
+Host:class.coursera.org
+User-Agent:Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1
